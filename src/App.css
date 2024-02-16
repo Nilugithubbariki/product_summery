@@ -1,38 +1,68 @@
-.App {
-  text-align: center;
+.container {
+  width: 90%;
+  margin: auto;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.search-bar {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+select {
+  padding: 8px;
+  margin-right: 10px;
+}
+
+@media (max-width: 600px) {
+  table {
+    border: 0;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  table thead {
+    display: none;
   }
-  to {
-    transform: rotate(360deg);
+
+  table tr {
+    margin-bottom: 10px;
+    display: block;
+    border: 1px solid #ddd;
+  }
+
+  table td {
+    display: block;
+    text-align: right;
+    border: none;
+    position: relative;
+  }
+
+  table td:last-child {
+    text-align: left;
+  }
+
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
   }
 }
