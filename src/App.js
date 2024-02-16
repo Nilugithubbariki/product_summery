@@ -207,17 +207,35 @@ const App = () => {
 
   return (
     <div className="container">
-      <div className="search-bar">
-        <input
-          type="text"
-          placeholder="Search by email"
-          onChange={handleSearch}
-        />
-        <select onChange={handleStatusChange}>
+      <div className="upperbox">
+        <div className="search-bar">
+          <label htmlFor="">What are you looking for?</label>
+          <br />
+          <input
+            className="SearchStyle"
+            type="text"
+            placeholder="Search by email"
+            onChange={handleSearch}
+          />
+        </div>
+        <label htmlFor="" className="clableStyle">
+          Category
+        </label>
+
+        <select onChange={handleStatusChange} className="categoryStyle">
           <option value="">All</option>
           <option value="Active">Active</option>
           <option value="Inactive">Inactive</option>
         </select>
+        <label htmlFor="" className="slabelStyle">
+          Status
+        </label>
+        <select onChange={handleStatusChange} className="statusStyle">
+          <option value="">All</option>
+          <option value="Active">Active</option>
+          <option value="Inactive">Inactive</option>
+        </select>
+        <button className="searchStyle">Search</button>
       </div>
       <table className="table">
         <thead>
@@ -253,7 +271,9 @@ const App = () => {
               <td>{item.sourse}</td>
               <td>{item.ooertype}</td>
               <td>
-                <button onClick={() => handleEdit(item.id)}>Edit</button>
+                <button onClick={() => handleEdit(item.id)}>
+                  <i class="bi bi-pencil-square"></i>
+                </button>
               </td>
             </tr>
           ))}
