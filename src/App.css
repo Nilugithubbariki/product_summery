@@ -167,7 +167,7 @@ select {
     border-radius: 10px;
   }
   .categoryStyle {
-    margin-left: -56px;
+    margin-left: -62px;
     margin-top: 23px;
     width: 59px;
     height: 34px;
@@ -186,7 +186,7 @@ select {
   .statusStyle {
     width: 58px;
     margin-top: 24px;
-    margin-left: -39px;
+    margin-left: -51px;
     height: 35px;
   }
   table thead {

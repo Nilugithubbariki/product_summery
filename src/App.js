@@ -250,7 +250,7 @@ const App = () => {
           <option value="Active">Active</option>
           <option value="Inactive">Inactive</option>
         </select>
-        <button className="searchStyle">SEARCH</button>
+        <button className="searchStyle">Search</button>
       </div>
       <div className="productStyle">
         <h4 className="pstyle">Product summery</h4>
