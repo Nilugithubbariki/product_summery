@@ -7,12 +7,44 @@
   width: 90%;
   margin: auto;
 }
+.midContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: -54px;
+}
+.midselectStyle {
+  width: 245px;
+  height: 36px;
+}
+.productStyle {
+  border: 1px solid #f2f2f2;
+  padding-top: 20px;
+  box-shadow: 0px 0px 1px 1px #f7f1f1;
+}
+.navpage {
+  margin-top: 16px;
+  margin-right: 10px;
+}
+.dbuttomStyle {
+  height: 32px;
+  padding-left: 10px;
+  padding-right: 10px;
+  background: #1111ea;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
+.pagination {
+  margin-top: 0px;
+}
 .table {
   width: 100%;
   border-collapse: collapse;
   box-shadow: 0px 0px 1px 1px #f7f1f1;
 }
-
 th,
 td {
   border: 1px solid #ddd;
@@ -26,19 +58,18 @@ th {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
   box-shadow: 0px 0px 1px 1px #f7f1f1;
   padding-left: 21px;
   padding-top: 15px;
   border-radius: 21px;
-  margin-top: 10px;
+  margin-top: 30px;
 }
 input {
   border: none;
   padding: 8px;
   background-color: #f0f0f0;
 }
-
 input:focus {
   outline: none;
 }
@@ -55,6 +86,19 @@ input:focus {
 .categoryStyle {
   margin-left: -253px;
 }
+.topStyle {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+.createStyle {
+  height: 33px;
+  width: 145px;
+  background: #1111ea;
+  border: none;
+  border-radius: 10px;
+  color: white;
+}
 tr:nth-child(even) {
   background-color: #f2f2f2;
 }
@@ -67,6 +111,9 @@ tr:nth-child(even) {
 .search-bar {
   margin-bottom: 20px;
 }
+.pstyle {
+  margin-left: 10px;
+}
 .searchStyle {
   height: 33px;
   width: 145px;
@@ -74,16 +121,34 @@ tr:nth-child(even) {
   border: none;
   border-radius: 10px;
   color: white;
+  margin-right: 20px;
 }
 input[type="text"],
 select {
   padding: 8px;
   margin-right: 10px;
 }
-
 @media (max-width: 600px) {
   table {
     border: 0;
+  }
+  .pstyle {
+    font-size: 3px;
+    font-weight: bold;
+  }
+  .navpage {
+    width: 129px;
+    margin-top: 16px;
+    margin-right: 38px;
+  }
+  .dbuttomStyle {
+    font-size: 4px;
+    width: 87px;
+  }
+  .midselectStyle {
+    margin-left: 10px;
+    width: 50px;
+    font-size: 7px;
   }
   .search-bar {
     margin-left: -23px;
@@ -92,9 +157,10 @@ select {
   .searchIcon {
     display: flex;
     align-items: center;
+    margin-left: 4px;
   }
   .SearchStyle {
-    width: 72px;
+    width: 69px;
     margin-left: 4px;
     height: 15px;
     border-radius: 10px;
@@ -103,14 +169,12 @@ select {
     margin-left: -56px;
     margin-top: 15px;
     width: 59px;
-    height: 33px;
+    height: 34px;
   }
   .searchStyle {
     width: 117px;
     margin-top: 12px;
     margin-right: 2px;
-  }
-  .flabelStyel {
   }
   .clableStyle {
     margin-left: 9px;
@@ -127,7 +191,48 @@ select {
   table thead {
     display: none;
   }
-
+  table tr {
+    margin-bottom: 10px;
+    display: block;
+    border: 1px solid #ddd;
+  }
+  table td {
+    display: block;
+    text-align: right;
+    border: none;
+    position: relative;
+  }
+  table td:last-child {
+    text-align: left;
+  }
+  table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-weight: bold;
+  }
+}
+@media (max-width: 768px) {
+  table {
+    border: 0;
+  }
+  .midselectStyle {
+    width: 62px;
+    font-size: 6px;
+    height: 30px;
+    margin-left: 97px;
+  }
+  .dbuttomStyle {
+    font-size: 6px;
+  }
+  .midContainer {
+    margin-top: -46px;
+  }
+  table thead {
+    display: none;
+  }
   table tr {
     margin-bottom: 10px;
     display: block;
@@ -140,11 +245,9 @@ select {
     border: none;
     position: relative;
   }
-
   table td:last-child {
     text-align: left;
   }
-
   table td::before {
     content: attr(data-label);
     position: absolute;

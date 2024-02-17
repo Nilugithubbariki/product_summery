@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "./App.css";
-
 const initialData = [
   {
     id: 1,
@@ -188,6 +187,18 @@ const App = () => {
   const [data, setData] = useState(initialData);
   const [filteredData, setFilteredData] = useState(initialData);
   const [search, setSearch] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(data.length / itemsPerPage);
+
+  const handlePageChange = (page) => {
+    setCurrentPage(page);
+  };
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const allData = data.slice(startIndex, endIndex);
+
   const handleSearch = (event) => {
     setSearch(event.target.value);
   };
@@ -201,9 +212,12 @@ const App = () => {
   const handleEdit = (id) => {
     console.log(`Edit item with id ${id}`);
   };
-
   return (
     <div className="container">
+      <div className="topStyle">
+        <h1>Orders</h1>
+        <button className="createStyle">CREATE NEW</button>
+      </div>
       <div className="upperbox">
         <div className="search-bar">
           <label htmlFor="" className="flabelStyel">
@@ -223,7 +237,6 @@ const App = () => {
         <label htmlFor="" className="clableStyle">
           Category
         </label>
-
         <select onChange={handleStatusChange} className="categoryStyle">
           <option value="">All</option>
           <option value="Active">Active</option>
@@ -237,7 +250,60 @@ const App = () => {
           <option value="Active">Active</option>
           <option value="Inactive">Inactive</option>
         </select>
-        <button className="searchStyle">Search</button>
+        <button className="searchStyle">SEARCH</button>
+      </div>
+      <div className="productStyle">
+        <h4 className="pstyle">Product summery</h4>
+        <div className="midContainer">
+          <select className="midselectStyle">
+            <option value="">All COLUMN</option>
+            <option value="Active">Active</option>
+            <option value="Inactive">Inactive</option>
+          </select>
+          <button className="dbuttomStyle">DISPATCH SELECTED</button>
+          {/* <div className="pagination">
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button
+                key={index + 1}
+                onClick={() => handlePageChange(index + 1)}
+                className={currentPage === index + 1 ? "active" : ""}
+              >
+                {index + 1}
+              </button>
+            ))}
+          </div> */}
+          <div className="navpage">
+            <nav aria-label="Page navigation example ">
+              <ul className="pagination">
+                <li className="page-item">
+                  <a className="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                  </a>
+                </li>
+                <li className="page-item">
+                  <a className="page-link" href="#">
+                    1
+                  </a>
+                </li>
+                <li className="page-item">
+                  <a className="page-link" href="#">
+                    2
+                  </a>
+                </li>
+                <li className="page-item">
+                  <a className="page-link" href="#">
+                    3
+                  </a>
+                </li>
+                <li className="page-item">
+                  <a className="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
       </div>
       <table className="table">
         <thead>
@@ -256,7 +322,7 @@ const App = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredData
+          {allData
             ?.filter((item) => {
               if (search === "") {
                 return item;
@@ -294,5 +360,4 @@ const App = () => {
     </div>
   );
 };
-
 export default App;
