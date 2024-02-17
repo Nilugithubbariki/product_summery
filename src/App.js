@@ -187,12 +187,9 @@ const itemsPerPage = 5;
 const App = () => {
   const [data, setData] = useState(initialData);
   const [filteredData, setFilteredData] = useState(initialData);
+  const [search, setSearch] = useState("");
   const handleSearch = (event) => {
-    const searchTerm = event.target.value.toLowerCase();
-    const filtered = data.filter((item) =>
-      item.email.toLowerCase().includes(searchTerm)
-    );
-    setFilteredData(filtered);
+    setSearch(event.target.value);
   };
 
   const handleStatusChange = (event) => {
@@ -254,29 +251,39 @@ const App = () => {
           </tr>
         </thead>
         <tbody>
-          {filteredData.map((item) => (
-            <tr key={item.id}>
-              <td>
-                {" "}
-                <input type="checkbox" />
-                {item.id}
-              </td>
-              <td>{item.shipiify}</td>
-              <td>{item.date}</td>
-              <td>{item.status}</td>
-              <td>{item.customer}</td>
-              <td>{item.email}</td>
-              <td>{item.country}</td>
-              <td>{item.shipping}</td>
-              <td>{item.sourse}</td>
-              <td>{item.ooertype}</td>
-              <td>
-                <button onClick={() => handleEdit(item.id)}>
-                  <i class="bi bi-pencil-square"></i>
-                </button>
-              </td>
-            </tr>
-          ))}
+          {filteredData
+            ?.filter((item) => {
+              if (search === "") {
+                return item;
+              } else if (
+                item.country.toLowerCase().includes(search.toLowerCase())
+              ) {
+                return item;
+              }
+            })
+            ?.map((item) => (
+              <tr key={item.id}>
+                <td>
+                  {" "}
+                  <input type="checkbox" />
+                  {item.id}
+                </td>
+                <td>{item.shipiify}</td>
+                <td>{item.date}</td>
+                <td>{item.status}</td>
+                <td>{item.customer}</td>
+                <td>{item.email}</td>
+                <td>{item.country}</td>
+                <td>{item.shipping}</td>
+                <td>{item.sourse}</td>
+                <td>{item.ooertype}</td>
+                <td>
+                  <button onClick={() => handleEdit(item.id)}>
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+                </td>
+              </tr>
+            ))}
         </tbody>
       </table>
     </div>
