@@ -206,7 +206,9 @@ const App = () => {
     <div className="container">
       <div className="upperbox">
         <div className="search-bar">
-          <label htmlFor="">What are you looking for?</label>
+          <label htmlFor="" className="flabelStyel">
+            What are you looking for?
+          </label>
           <br />
           <input
             className="SearchStyle"

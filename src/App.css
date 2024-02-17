@@ -79,22 +79,28 @@ select {
     height: 15px;
   }
   .categoryStyle {
-    margin-left: -74px;
-    margin-top: 16px;
+    margin-left: -56px;
+    margin-top: 15px;
     width: 59px;
-    height: 32px;
+    height: 33px;
   }
   .searchStyle {
     width: 117px;
     margin-top: 12px;
+    margin-right: 2px;
+  }
+  .flabelStyel {
   }
   .clableStyle {
-    margin-left: -24px;
+    margin-left: 9px;
+  }
+  .slabelStyle {
+    margin-left: 9px;
   }
   .statusStyle {
     width: 58px;
     margin-top: 16px;
-    margin-left: -66px;
+    margin-left: -39px;
     height: 35px;
   }
   table thead {
