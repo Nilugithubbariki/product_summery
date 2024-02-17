@@ -137,6 +137,36 @@ select {
   padding: 8px;
   margin-right: 10px;
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.filters {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+select {
+  padding: 8px;
+  margin-right: 10px;
+}
+
 @media (max-width: 600px) {
   table {
     border: 0;
@@ -145,6 +175,14 @@ select {
     margin-left: 4px;
     font-size: 15px;
     font-weight: bold;
+  }
+  .table td {
+    border: none;
+    border-bottom: 1px solid #ddd;
+  }
+  .table th {
+    border: none;
+    border-bottom: 1px solid #ddd;
   }
   .navpage {
     width: 129px;
@@ -267,13 +305,12 @@ select {
     padding-left: 15px;
     font-weight: bold;
   }
-  .categoryStyle {
-    margin-left: -62px;
+  .table td {
+    border: none;
+    border-bottom: 1px solid #ddd;
   }
-  .clableStyle {
-    margin-left: -19px;
-  }
-  .statusStyle {
-    margin-left: -85px;
+  .table th {
+    border: none;
+    border-bottom: 1px solid #ddd;
   }
 }

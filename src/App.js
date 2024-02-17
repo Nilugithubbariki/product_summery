@@ -325,7 +325,7 @@ const App = () => {
         </div>
       </div>
       <table className="table">
-        <thead>
+        <thead style={{ fontSize: "10px" }}>
           <tr>
             <th>ID</th>
             <th>SHIPIIFY</th>
@@ -336,11 +336,11 @@ const App = () => {
             <th>COUNTRY</th>
             <th>SHIPPING</th>
             <th>SOURSE</th>
-            <th>OOER TYPE</th>
+            <th>OOERTYPE</th>
             <th></th>
           </tr>
         </thead>
-        <tbody>
+        <tbody style={{ fontSize: "10px" }}>
           {currentData
             ?.filter((item) => {
               if (search === "") {
@@ -351,7 +351,7 @@ const App = () => {
                 return item;
               }
             })
-            ?.map((item, index) => (
+            ?.map((item) => (
               <tr key={item.id}>
                 <td>
                   {" "}
