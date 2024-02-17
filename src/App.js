@@ -210,12 +210,15 @@ const App = () => {
             What are you looking for?
           </label>
           <br />
-          <input
-            className="SearchStyle"
-            type="text"
-            placeholder="Search by email"
-            onChange={handleSearch}
-          />
+          <div className="searchIcon">
+            <i class="bi bi-search"></i>
+            <input
+              className="SearchStyle"
+              type="text"
+              placeholder="Search by country"
+              onChange={handleSearch}
+            />
+          </div>
         </div>
         <label htmlFor="" className="clableStyle">
           Category

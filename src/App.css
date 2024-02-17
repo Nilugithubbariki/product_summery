@@ -33,6 +33,22 @@ th {
   border-radius: 21px;
   margin-top: 10px;
 }
+input {
+  border: none;
+  padding: 8px;
+  background-color: #f0f0f0;
+}
+
+input:focus {
+  outline: none;
+}
+.searchIcon {
+  border: 1px solid #b8b2b2;
+  border-radius: 10px;
+  text-align: center;
+  background-color: #f0f0f0;
+  padding-left: 10px;
+}
 .statusStyle {
   margin-left: -234px;
 }
@@ -72,6 +88,10 @@ select {
   .search-bar {
     margin-left: -23px;
     width: 120px;
+  }
+  .searchIcon {
+    display: flex;
+    align-items: center;
   }
   .SearchStyle {
     width: 74px;
