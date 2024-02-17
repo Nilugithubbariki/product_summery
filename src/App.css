@@ -94,9 +94,10 @@ select {
     align-items: center;
   }
   .SearchStyle {
-    width: 74px;
+    width: 72px;
     margin-left: 4px;
     height: 15px;
+    border-radius: 10px;
   }
   .categoryStyle {
     margin-left: -56px;
