@@ -187,18 +187,13 @@ const App = () => {
   const [data, setData] = useState(initialData);
   const [filteredData, setFilteredData] = useState(initialData);
   const [search, setSearch] = useState("");
-  const [currentPage, setCurrentPage] = useState(1);
-
-  const totalPages = Math.ceil(data.length / itemsPerPage);
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
+  const [currentpage, setCurrentPage] = useState(1);
+  const StartIndex = (currentpage - 1) * itemsPerPage;
+  const EndIndex = StartIndex + itemsPerPage;
+  const currentData = data.slice(StartIndex, EndIndex);
+  const handlePage = (newPage) => {
+    setCurrentPage(newPage);
   };
-
-  const startIndex = (currentPage - 1) * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const allData = data.slice(startIndex, endIndex);
-
   const handleSearch = (event) => {
     setSearch(event.target.value);
   };
@@ -208,15 +203,24 @@ const App = () => {
     const filtered = data.filter((item) => item.status === selectedStatus);
     setFilteredData(filtered);
   };
-
-  const handleEdit = (id) => {
-    console.log(`Edit item with id ${id}`);
+  const clickMe = () => {
+    alert("Wellcome!");
+  };
+  const clickSearch = () => {
+    alert(
+      "As of now please search your country name in search box only. Then you will get your country name!!!!"
+    );
+  };
+  const dispatch = () => {
+    alert("Dispatch selected!!!");
   };
   return (
     <div className="container">
       <div className="topStyle">
         <h1>Orders</h1>
-        <button className="createStyle">CREATE NEW</button>
+        <button className="createStyle" onClick={clickMe}>
+          CREATE NEW
+        </button>
       </div>
       <div className="upperbox">
         <div className="search-bar">
@@ -250,7 +254,9 @@ const App = () => {
           <option value="Active">Active</option>
           <option value="Inactive">Inactive</option>
         </select>
-        <button className="searchStyle">Search</button>
+        <button className="searchStyle" onClick={clickSearch}>
+          Search
+        </button>
       </div>
       <div className="productStyle">
         <h4 className="pstyle">Product summery</h4>
@@ -260,24 +266,21 @@ const App = () => {
             <option value="Active">Active</option>
             <option value="Inactive">Inactive</option>
           </select>
-          <button className="dbuttomStyle">DISPATCH SELECTED</button>
-          {/* <div className="pagination">
-            {Array.from({ length: totalPages }, (_, index) => (
-              <button
-                key={index + 1}
-                onClick={() => handlePageChange(index + 1)}
-                className={currentPage === index + 1 ? "active" : ""}
-              >
-                {index + 1}
-              </button>
-            ))}
-          </div> */}
+          <button className="dbuttomStyle" onClick={dispatch}>
+            DISPATCH SELECTED
+          </button>
           <div className="navpage">
             <nav aria-label="Page navigation example ">
               <ul className="pagination">
                 <li className="page-item">
                   <a className="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">&laquo;</span>
+                    <span
+                      aria-hidden="true"
+                      onClick={() => handlePage(currentpage - 1)}
+                      disabled={currentpage === 1}
+                    >
+                      &laquo;
+                    </span>
                   </a>
                 </li>
                 <li className="page-item">
@@ -286,18 +289,34 @@ const App = () => {
                   </a>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" href="#">
+                  <a
+                    className="page-link"
+                    href="#"
+                    onClick={() => handlePage(currentpage + 1)}
+                    disabled={currentpage === 1}
+                  >
                     2
                   </a>
                 </li>
                 <li className="page-item">
-                  <a className="page-link" href="#">
+                  <a
+                    className="page-link"
+                    href="#"
+                    onClick={() => handlePage(currentpage + 2)}
+                    disabled={currentpage === 2}
+                  >
                     3
                   </a>
                 </li>
                 <li className="page-item">
                   <a className="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
+                    <span
+                      aria-hidden="true"
+                      onClick={() => handlePage(currentpage + 1)}
+                      disabled={currentpage === 1}
+                    >
+                      &raquo;
+                    </span>
                   </a>
                 </li>
               </ul>
@@ -309,20 +328,20 @@ const App = () => {
         <thead>
           <tr>
             <th>ID</th>
-            <th>Shipiify</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th>Customer</th>
-            <th>Email</th>
-            <th>Country</th>
-            <th>Shipping</th>
-            <th>Sourse</th>
-            <th>Ooer type</th>
-            <th>Action</th>
+            <th>SHIPIIFY</th>
+            <th>DATE</th>
+            <th>STATUS</th>
+            <th>CUSTOMER</th>
+            <th>EMAIL</th>
+            <th>COUNTRY</th>
+            <th>SHIPPING</th>
+            <th>SOURSE</th>
+            <th>OOER TYPE</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          {allData
+          {currentData
             ?.filter((item) => {
               if (search === "") {
                 return item;
@@ -332,13 +351,14 @@ const App = () => {
                 return item;
               }
             })
-            ?.map((item) => (
+            ?.map((item, index) => (
               <tr key={item.id}>
                 <td>
                   {" "}
                   <input type="checkbox" />
                   {item.id}
                 </td>
+
                 <td>{item.shipiify}</td>
                 <td>{item.date}</td>
                 <td>{item.status}</td>
@@ -349,9 +369,7 @@ const App = () => {
                 <td>{item.sourse}</td>
                 <td>{item.ooertype}</td>
                 <td>
-                  <button onClick={() => handleEdit(item.id)}>
-                    <i class="bi bi-pencil-square"></i>
-                  </button>
+                  <i class="bi bi-pencil-square"></i>
                 </td>
               </tr>
             ))}
