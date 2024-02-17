@@ -133,13 +133,13 @@ select {
     border: 0;
   }
   .pstyle {
-    font-size: 3px;
+    font-size: 15px;
     font-weight: bold;
   }
   .navpage {
     width: 129px;
     margin-top: 16px;
-    margin-right: 38px;
+    margin-right: -277px;
   }
   .dbuttomStyle {
     font-size: 4px;
@@ -167,13 +167,13 @@ select {
   }
   .categoryStyle {
     margin-left: -56px;
-    margin-top: 15px;
+    margin-top: 23px;
     width: 59px;
     height: 34px;
   }
   .searchStyle {
     width: 117px;
-    margin-top: 12px;
+    margin-top: 24px;
     margin-right: 2px;
   }
   .clableStyle {
@@ -184,7 +184,7 @@ select {
   }
   .statusStyle {
     width: 58px;
-    margin-top: 16px;
+    margin-top: 24px;
     margin-left: -39px;
     height: 35px;
   }
@@ -219,7 +219,7 @@ select {
     border: 0;
   }
   .midselectStyle {
-    width: 62px;
+    width: 73px;
     font-size: 6px;
     height: 30px;
     margin-left: 97px;
@@ -228,7 +228,8 @@ select {
     font-size: 6px;
   }
   .midContainer {
-    margin-top: -46px;
+    margin-top: -19px;
+    margin-right: 332px;
   }
   table thead {
     display: none;
