@@ -336,81 +336,86 @@ const App = () => {
           </div>
         </div>
       </div>
-      <table className="table">
-        <thead>
-          <tr>
-            <th>ID</th>
-            <th>Shipiify</th>
-            <th>Date</th>
-            <th>Status</th>
-            <th>Customer</th>
-            <th>Email</th>
-            <th>Country</th>
-            <th>Shipping</th>
-            <th>Sourse</th>
-            <th>Ooertype</th>
-          </tr>
-        </thead>
-        <tbody>
-          {currentData
-            .filter((item) => {
-              if (search === "") {
-                return item;
-              } else if (
-                item.country.toLowerCase().includes(search.toLowerCase())
-              ) {
-                return item;
-              }
-            })
-            .map(
-              ({
-                id,
-                shipiify,
-                date,
-                status,
-                customer,
-                email,
-                country,
-                shipping,
-                sourse,
-                ooertype,
-              }) => (
-                <tr key={id}>
-                  <td>{id}</td>
-                  <td>{shipiify}</td>
-                  <td>{date}</td>
-                  <td>{status}</td>
-                  <td>{customer}</td>
-                  <td>{email}</td>
-                  <td>
-                    {editingId === id ? (
-                      <input
-                        type="text"
-                        value={editedCountry}
-                        onChange={(e) => setEditedCountry(e.target.value)}
-                      />
-                    ) : (
-                      country
-                    )}
-                  </td>
-                  <td>{shipping}</td>
-                  <td>{sourse}</td>
-                  <td>
-                    {ooertype}{" "}
-                    {editingId === id ? (
-                      <i class="bi bi-save" onClick={() => handleSave(id)}></i>
-                    ) : (
-                      <i
-                        class="bi bi-pencil-square"
-                        onClick={() => handleEdit(id, country)}
-                      ></i>
-                    )}
-                  </td>
-                </tr>
-              )
-            )}
-        </tbody>
-      </table>
+      <div className="table-responsive">
+        <table className="table">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Shipiify</th>
+              <th>Date</th>
+              <th>Status</th>
+              <th>Customer</th>
+              <th>Email</th>
+              <th>Country</th>
+              <th>Shipping</th>
+              <th>Sourse</th>
+              <th>Ooertype</th>
+            </tr>
+          </thead>
+          <tbody>
+            {currentData
+              .filter((item) => {
+                if (search === "") {
+                  return item;
+                } else if (
+                  item.country.toLowerCase().includes(search.toLowerCase())
+                ) {
+                  return item;
+                }
+              })
+              .map(
+                ({
+                  id,
+                  shipiify,
+                  date,
+                  status,
+                  customer,
+                  email,
+                  country,
+                  shipping,
+                  sourse,
+                  ooertype,
+                }) => (
+                  <tr key={id}>
+                    <td>{id}</td>
+                    <td>{shipiify}</td>
+                    <td>{date}</td>
+                    <td>{status}</td>
+                    <td>{customer}</td>
+                    <td>{email}</td>
+                    <td>
+                      {editingId === id ? (
+                        <input
+                          type="text"
+                          value={editedCountry}
+                          onChange={(e) => setEditedCountry(e.target.value)}
+                        />
+                      ) : (
+                        country
+                      )}
+                    </td>
+                    <td>{shipping}</td>
+                    <td>{sourse}</td>
+                    <td>
+                      {ooertype}{" "}
+                      {editingId === id ? (
+                        <i
+                          class="bi bi-save"
+                          onClick={() => handleSave(id)}
+                        ></i>
+                      ) : (
+                        <i
+                          class="bi bi-pencil-square"
+                          onClick={() => handleEdit(id, country)}
+                        ></i>
+                      )}
+                    </td>
+                  </tr>
+                )
+              )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

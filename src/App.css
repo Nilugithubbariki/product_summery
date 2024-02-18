@@ -3,10 +3,6 @@
   margin: 0px;
   padding: 0px;
 }
-.container {
-  width: 90%;
-  margin: auto;
-}
 .table {
   width: 100%;
   border-collapse: collapse;
@@ -14,22 +10,19 @@
 
 .table th,
 .table td {
-  padding: 8px;
   border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
 }
 
 .table th {
   background-color: #f2f2f2;
 }
 
-.table tr:nth-child(even) {
-  background-color: #f2f2f2;
+.container {
+  width: 90%;
+  margin: auto;
 }
-
-.table tr:hover {
-  background-color: #ddd;
-}
-
 .table input[type="text"],
 .table input[type="number"] {
   width: 100%;
@@ -64,6 +57,14 @@
   border: none;
   border-radius: 10px;
   color: white;
+}
+.table th {
+  border: none;
+  border-bottom: 1px solid #ddd;
+}
+.table td {
+  border: none;
+  border-bottom: 1px solid #ddd;
 }
 .pagination {
   margin-top: 0px;
@@ -149,9 +150,15 @@ select {
   padding: 8px;
   margin-right: 10px;
 }
-@media (max-width: 600px) {
-  table {
-    border: 0;
+@media (max-width: 576px) {
+  .table {
+    overflow-x: auto;
+    display: block;
+  }
+
+  .table th,
+  .table td {
+    white-space: nowrap;
   }
   .pstyle {
     margin-left: 4px;
@@ -212,6 +219,13 @@ select {
   }
 }
 @media (max-width: 768px) {
+  table {
+    border: 0;
+  }
+  .table th,
+  .table td {
+    padding: 4px;
+  }
   .midselectStyle {
     width: 73px;
     font-size: 6px;
