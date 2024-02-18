@@ -188,6 +188,8 @@ const App = () => {
   const [filteredData, setFilteredData] = useState(initialData);
   const [search, setSearch] = useState("");
   const [currentpage, setCurrentPage] = useState(1);
+  const [editingId, setEditingId] = useState(null);
+  const [editedCountry, setEditedCountry] = useState("");
   const StartIndex = (currentpage - 1) * itemsPerPage;
   const EndIndex = StartIndex + itemsPerPage;
   const currentData = data.slice(StartIndex, EndIndex);
@@ -197,7 +199,17 @@ const App = () => {
   const handleSearch = (event) => {
     setSearch(event.target.value);
   };
-
+  const handleEdit = (id, country) => {
+    setEditingId(id);
+    setEditedCountry(country);
+  };
+  const handleSave = (id) => {
+    const updatedData = data.map((item) =>
+      item.id === id ? { ...item, country: editedCountry } : item
+    );
+    setData(updatedData);
+    setEditingId(null);
+  };
   const handleStatusChange = (event) => {
     const selectedStatus = event.target.value;
     const filtered = data.filter((item) => item.status === selectedStatus);
@@ -341,38 +353,54 @@ const App = () => {
           </tr>
         </thead>
         <tbody style={{ fontSize: "10px" }}>
-          {currentData
-            ?.filter((item) => {
-              if (search === "") {
-                return item;
-              } else if (
-                item.country.toLowerCase().includes(search.toLowerCase())
-              ) {
-                return item;
-              }
-            })
-            ?.map((item) => (
-              <tr key={item.id}>
+          {currentData.map(
+            ({
+              id,
+              shipiify,
+              date,
+              status,
+              customer,
+              email,
+              country,
+              shipping,
+              sourse,
+              ooertype,
+            }) => (
+              <tr key={id}>
+                <td>{id}</td>
+                <td>{shipiify}</td>
+                <td>{date}</td>
+                <td>{status}</td>
+                <td>{customer}</td>
+                <td>{email}</td>
                 <td>
-                  {" "}
-                  <input type="checkbox" />
-                  {item.id}
+                  {editingId === id ? (
+                    <input
+                      type="text"
+                      value={editedCountry}
+                      onChange={(e) => setEditedCountry(e.target.value)}
+                    />
+                  ) : (
+                    country
+                  )}
                 </td>
-
-                <td>{item.shipiify}</td>
-                <td>{item.date}</td>
-                <td>{item.status}</td>
-                <td>{item.customer}</td>
-                <td>{item.email}</td>
-                <td>{item.country}</td>
-                <td>{item.shipping}</td>
-                <td>{item.sourse}</td>
-                <td>{item.ooertype}</td>
+                <td>{shipping}</td>
+                <td>{sourse}</td>
                 <td>
-                  <i class="bi bi-pencil-square"></i>
+                  {ooertype}{" "}
+                  {editingId === id ? (
+                    <i class="bi bi-save" onClick={() => handleSave(id)}></i>
+                  ) : (
+                    <i
+                      class="bi bi-pencil-square"
+                      onClick={() => handleEdit(id, country)}
+                    ></i>
+                  )}
                 </td>
+                <td></td>
               </tr>
-            ))}
+            )
+          )}
         </tbody>
       </table>
     </div>
