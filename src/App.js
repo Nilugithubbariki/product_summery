@@ -377,7 +377,10 @@ const App = () => {
                   ooertype,
                 }) => (
                   <tr key={id}>
-                    <td>{id}</td>
+                    <td>
+                      <input type="checkbox" />
+                      {id}
+                    </td>
                     <td>{shipiify}</td>
                     <td>{date}</td>
                     <td>{status}</td>

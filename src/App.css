@@ -7,7 +7,6 @@
   width: 100%;
   border-collapse: collapse;
 }
-
 .table th,
 .table td {
   border: 1px solid #ddd;
@@ -17,8 +16,8 @@
 
 .table th {
   background-color: #f2f2f2;
+  font-size: 14px;
 }
-
 .container {
   width: 90%;
   margin: auto;
@@ -27,7 +26,6 @@
 .table input[type="number"] {
   width: 100%;
 }
-
 .midContainer {
   display: flex;
   justify-content: flex-end;
@@ -155,7 +153,9 @@ select {
     overflow-x: auto;
     display: block;
   }
-
+  .table th {
+    font-size: 14px;
+  }
   .table th,
   .table td {
     white-space: nowrap;
@@ -225,6 +225,9 @@ select {
   .table th,
   .table td {
     padding: 4px;
+  }
+  .table th {
+    font-size: 14px;
   }
   .midselectStyle {
     width: 73px;
