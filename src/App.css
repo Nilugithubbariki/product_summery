@@ -13,7 +13,6 @@
   padding: 8px;
   text-align: left;
 }
-
 .table th {
   background-color: #f2f2f2;
   font-size: 14px;
@@ -94,10 +93,14 @@ input:focus {
   padding-left: 10px;
 }
 .statusStyle {
-  margin-left: -234px;
+  margin-top: 5px;
+  margin-left: -98px;
+  width: 223px;
 }
 .categoryStyle {
-  margin-left: -253px;
+  margin-top: 5px;
+  margin-left: -118px;
+  width: 223px;
 }
 .topStyle {
   display: flex;
@@ -114,7 +117,7 @@ input:focus {
 }
 .clableStyle {
   margin-top: -63px;
-  margin-left: -81px;
+  margin-left: 60px;
 }
 .slabelStyle {
   margin-top: -56px;
@@ -124,6 +127,9 @@ input:focus {
 }
 .pstyle {
   margin-left: 10px;
+}
+.SearchStyle {
+  width: 200px;
 }
 .searchStyle {
   height: 33px;
@@ -238,7 +244,6 @@ select {
   .dbuttomStyle {
     font-size: 6px;
   }
-
   .midContainer {
     margin-top: -19px;
     margin-right: 332px;

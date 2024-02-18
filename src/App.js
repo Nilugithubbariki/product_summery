@@ -17,7 +17,7 @@ const initialData = [
     id: 2,
     shipiify: 17713,
     date: "2024-02-17",
-    status: "Inactive",
+    status: "Pending",
     customer: "Ahmed",
     email: "example2@example.com",
     country: "Australia",
@@ -41,7 +41,7 @@ const initialData = [
     id: 4,
     shipiify: 17713,
     date: "2024-02-17",
-    status: "Inactive",
+    status: "Pending",
     customer: "Ahmed",
     email: "example2@example.com",
     country: "Australia",
@@ -65,7 +65,7 @@ const initialData = [
     id: 6,
     shipiify: 17713,
     date: "2024-02-17",
-    status: "Inactive",
+    status: "Pending",
     customer: "Ahmed",
     email: "example2@example.com",
     country: "Australia",
@@ -89,7 +89,7 @@ const initialData = [
     id: 8,
     shipiify: 17713,
     date: "2024-02-17",
-    status: "Inactive",
+    status: "Pending",
     customer: "Ahmed",
     email: "example2@example.com",
     country: "Australia",
@@ -113,7 +113,7 @@ const initialData = [
     id: 11,
     shipiify: 17713,
     date: "2024-02-17",
-    status: "Inactive",
+    status: "Pending",
     customer: "Ahmed",
     email: "example2@example.com",
     country: "Australia",
@@ -137,7 +137,7 @@ const initialData = [
     id: 13,
     shipiify: 17713,
     date: "2024-02-17",
-    status: "Inactive",
+    status: "Pending",
     customer: "Ahmed",
     email: "example2@example.com",
     country: "Australia",
@@ -161,7 +161,7 @@ const initialData = [
     id: 15,
     shipiify: 17713,
     date: "2024-02-17",
-    status: "Inactive",
+    status: "Pending",
     customer: "Ahmed",
     email: "example2@example.com",
     country: "Australia",
@@ -243,7 +243,7 @@ const App = () => {
           <div className="searchIcon">
             <i class="bi bi-search"></i>
             <input
-              className="SearchStyle"
+              className="SearchStyle "
               type="text"
               placeholder="Search by country"
               onChange={handleSearch}
@@ -256,7 +256,7 @@ const App = () => {
         <select onChange={handleStatusChange} className="categoryStyle">
           <option value="">All</option>
           <option value="Active">Active</option>
-          <option value="Inactive">Inactive</option>
+          <option value="Pending">Pending</option>
         </select>
         <label htmlFor="" className="slabelStyle">
           Status
@@ -264,7 +264,7 @@ const App = () => {
         <select onChange={handleStatusChange} className="statusStyle">
           <option value="">All</option>
           <option value="Active">Active</option>
-          <option value="Inactive">Inactive</option>
+          <option value="Pending">Pending</option>
         </select>
         <button className="searchStyle" onClick={clickSearch}>
           Search
@@ -276,7 +276,7 @@ const App = () => {
           <select className="midselectStyle">
             <option value="">All COLUMN</option>
             <option value="Active">Active</option>
-            <option value="Inactive">Inactive</option>
+            <option value="Pending">Pending</option>
           </select>
           <button className="dbuttomStyle" onClick={dispatch}>
             DISPATCH SELECTED
