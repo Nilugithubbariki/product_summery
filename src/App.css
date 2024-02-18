@@ -4,7 +4,7 @@
   padding: 0px;
 }
 .container {
-  width: 100%;
+  width: 90%;
   margin: auto;
 }
 .midContainer {
@@ -185,7 +185,7 @@ select {
   .navpage {
     width: 129px;
     margin-top: 16px;
-    margin-right: -285px;
+    margin-right: -267px;
   }
   .dbuttomStyle {
     font-size: 4px;
@@ -275,7 +275,7 @@ select {
   }
   .midContainer {
     margin-top: -19px;
-    margin-right: 52px;
+    margin-right: 332px;
   }
   table thead {
     display: none;
