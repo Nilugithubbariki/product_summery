@@ -337,22 +337,21 @@ const App = () => {
         </div>
       </div>
       <table className="table">
-        <thead style={{ fontSize: "10px" }}>
+        <thead>
           <tr>
             <th>ID</th>
-            <th>SHIPIIFY</th>
-            <th>DATE</th>
-            <th>STATUS</th>
-            <th>CUSTOMER</th>
-            <th>EMAIL</th>
-            <th>COUNTRY</th>
-            <th>SHIPPING</th>
-            <th>SOURSE</th>
-            <th>OOERTYPE</th>
-            <th></th>
+            <th>Shipiify</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Customer</th>
+            <th>Email</th>
+            <th>Country</th>
+            <th>Shipping</th>
+            <th>Sourse</th>
+            <th>Ooertype</th>
           </tr>
         </thead>
-        <tbody style={{ fontSize: "10px" }}>
+        <tbody>
           {currentData
             .filter((item) => {
               if (search === "") {
@@ -407,7 +406,6 @@ const App = () => {
                       ></i>
                     )}
                   </td>
-                  <td></td>
                 </tr>
               )
             )}
