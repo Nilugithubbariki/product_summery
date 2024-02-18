@@ -4,7 +4,7 @@
   padding: 0px;
 }
 .container {
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 .midContainer {
@@ -166,151 +166,9 @@ select {
   padding: 8px;
   margin-right: 10px;
 }
-
-@media (max-width: 600px) {
-  table {
-    border: 0;
-  }
-  .pstyle {
-    margin-left: 4px;
-    font-size: 15px;
-    font-weight: bold;
-  }
-  .table td {
-    border: none;
-    border-bottom: 1px solid #ddd;
-  }
-  .table th {
-    border: none;
-    border-bottom: 1px solid #ddd;
-  }
-  .navpage {
-    width: 129px;
-    margin-top: 16px;
-    margin-right: -285px;
-  }
-  .dbuttomStyle {
-    font-size: 4px;
-    width: 87px;
-  }
-  .midselectStyle {
-    margin-left: 10px;
-    width: 50px;
-    font-size: 7px;
-  }
-  .search-bar {
-    margin-left: -23px;
-    width: 120px;
-  }
-  .searchIcon {
-    display: flex;
-    align-items: center;
-    margin-left: 4px;
-  }
-  .SearchStyle {
-    width: 69px;
-    margin-left: 4px;
-    height: 15px;
-    border-radius: 10px;
-  }
-  .categoryStyle {
-    margin-left: -62px;
-    margin-top: 23px;
-    width: 59px;
-    height: 34px;
-  }
-  .searchStyle {
-    width: 117px;
-    margin-top: 24px;
-    margin-right: 2px;
-  }
-  .clableStyle {
-    margin-left: 9px;
-  }
-  .slabelStyle {
-    margin-left: 9px;
-  }
-  .statusStyle {
-    width: 58px;
-    margin-top: 24px;
-    margin-left: -51px;
-    height: 35px;
-  }
-  table thead {
-    display: none;
-  }
-  table tr {
-    margin-bottom: 10px;
-    display: block;
-    border: 1px solid #ddd;
-  }
-  table td {
-    display: block;
-    text-align: right;
-    border: none;
-    position: relative;
-  }
-  table td:last-child {
-    text-align: left;
-  }
-  table td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 0;
-    width: 50%;
-    padding-left: 15px;
-    font-weight: bold;
-  }
-}
-@media (max-width: 768px) {
-  table {
-    border: 0;
-  }
-  .midselectStyle {
-    width: 73px;
-    font-size: 6px;
-    height: 30px;
-    margin-left: 97px;
-  }
-  .dbuttomStyle {
-    font-size: 6px;
-  }
-  .midContainer {
-    margin-top: -19px;
-    margin-right: 332px;
-  }
-  table thead {
-    display: none;
-  }
-  table tr {
-    margin-bottom: 10px;
-    display: block;
-    border: 1px solid #ddd;
-  }
-
-  table td {
-    display: block;
-    text-align: right;
-    border: none;
-    position: relative;
-  }
-  table td:last-child {
-    text-align: left;
-  }
-  table td::before {
-    content: attr(data-label);
-    position: absolute;
-    left: 0;
-    width: 50%;
-    padding-left: 15px;
-    font-weight: bold;
-  }
-  .table td {
-    border: none;
-    border-bottom: 1px solid #ddd;
-  }
-  .table th {
-    border: none;
-    border-bottom: 1px solid #ddd;
+@media (max-width: 412px) {
+  .container {
+    width: 100%;
+    margin: auto;
   }
 }
